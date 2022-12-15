@@ -1,0 +1,144 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@font-face {
+  font-family: 'league-gothic-font';
+  src: url('font/LeagueGothic-Regular.ttf');
+  font-display: swap;
+}
+
+:root {
+	--red: 0;
+	--green: 0;
+	--blue: 0;
+	--maincolor: rgb(var(--red), var(--green), var(--blue));
+	--backgroundcolor: #fff;
+	--basecolor: rgb(calc(-30 + var(--red)), calc(-30 + var(--green)), calc(-30 + var(--blue)));
+	
+	--textshadowcolor: #fff;
+	--textshadow: 0;
+}
+
+.lich {
+	aspect-ratio: 2/3;
+	
+	font-family: league-gothic-font;
+	
+	background: var(--backgroundcolor);
+	
+	display: grid;
+	grid-template-rows: 65% 1fr;
+	
+	user-select: none;
+}
+
+.lich>.lichduong {
+	grid-row: 1;
+	
+	display: grid;
+	grid-template-rows: 10% 1fr 10%;
+}
+
+.lich>.lichduong>.namthang {
+	grid-row: 1;
+	
+	text-shadow: var(--textshadow);
+	
+	background: var(--maincolor);
+	
+	display: grid;
+	grid-template-columns: 25% 1fr;
+}
+
+.lich>.lichduong>.namthang>.nam {
+	grid-column: 1;
+	
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+.lich>.lichduong>.namthang>.thang {
+	grid-column: 2;
+	
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
+.lich>.lichduong>.ngay {
+	grid-row: 2;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lich>.lichduong>.thu {
+	grid-row: 3;
+	
+	width: 30%;
+	
+	text-shadow: var(--textshadow);
+	
+	background: var(--maincolor);
+	
+	display: flex;
+	align-items: center;
+}
+
+.lich>.licham {
+	grid-row: 2;
+	
+	display: grid;
+	grid-template-rows: 1fr 16%;
+}
+
+.lich>.licham>.ngaythangnamtiet {
+	grid-row: 1;
+	
+	color: var(--maincolor);
+	
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.lich>.licham>.ngaythangnamtiet>.ngay {
+	grid-column: 1;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.lich>.licham>.ngaythangnamtiet>.ngay>.ngay-hinh>img {
+	width: 100%;
+}
+
+.lich>.licham>.ngaythangnamtiet>.thangnamtiet {
+	grid-column: 2;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.lich>.licham>.giohoangdao {
+	grid-row: 2;
+	
+	text-shadow: var(--textshadow);
+	
+	background: var(--maincolor);
+	
+	display: flex;
+	align-items: center;
+}

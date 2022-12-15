@@ -1,0 +1,25 @@
+{
+	"lichduong": {
+		"thu": "chủ nhật",
+		"ngay": "11",
+		"thang": "mười hai",
+		"nam": "2022"
+	},
+	"licham": {
+		"ngay": {
+			"so": "18",
+			"chu": "mậu tuất"
+		},
+		"thang": "nhâm tý",
+		"nam": "nhâm dần",
+		"tiet": "đại tuyết",
+		"giohoangdao": [
+			"dần(3-5)",
+			"thìn(7-9)",
+			"tỵ(9-11)",
+			"thân(15-17)",
+			"dậu(17-19)",
+			"hợi(21-23)"
+		]
+	}
+}

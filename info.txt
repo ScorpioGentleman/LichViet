@@ -1,0 +1,105 @@
+calendar:
+	[	
+		width:	400px
+		height:	600px
+	]
+	solar:
+		[
+			width:	400px
+			height:	390px
+		]
+		year-month:
+			[
+				width:	400px
+				height:	39px
+			]
+			year:
+				[
+					width:	100px
+					height: 39px
+				]
+			month:
+				[
+					width:	260px
+					height: 39px
+				]
+		date:
+			[
+				width:	400px
+				height:	312px
+			]
+		days of week:
+			[
+				width:	400px
+				height:	39px
+			]
+	lunar:
+		[
+			width:	400px
+			height:	210px
+		]
+		date-month-year-term:
+			[
+				width:	400px
+				height:	176.4px
+			]
+			date:
+				[
+					width:	200px
+					height:	176.4px
+				]
+				image:
+					[
+						width: 32px
+					]
+			month-year-term:
+				[
+					width:	200px
+					height:	176.4px
+				]
+				month:
+					[
+						width:	200px
+						height:	58.8px
+					]
+				year:
+					[
+						width:	200px
+						height:	58.8px
+					]
+				term:
+					[
+						width:	200px
+						height:	58.8px
+					]
+		zodiac time:
+			[
+				width:	400px
+				height:	33.6px
+			]
+		
+
+font size:
+	solar:
+		days of week:
+			27.2px
+		date:
+			224px
+		month:
+			27.2px
+		year:
+			32px
+	lunar:
+		date:
+			number:
+				88px
+			text:
+				20.8px
+		month:
+			20.8px
+		year:
+			20.8px
+		term:
+			20.8px
+		zodiac time:
+			16.64px

@@ -457,8 +457,67 @@ const lunarcalendar_html = date => {
 	return html_text;
 }
 
+const event_time = [
+	[0,25,12],[1,1,1,200,30,30,255,0,0,255,201,14,255,201,14,170,0,0]
+]
+
+const check_event = (event) => {
+	let date = new Date()
+	for (let i = 0; i < event.length; i++) {
+		if (event[i][0] == 0) {
+			if (date.getDate() == event[i][1] && date.getMonth() == event[i][2] - 1) {
+				return event[i]
+			}
+		} else {
+			let lunardate = convert_solar_to_lunar(date.getDate(), date.getMonth() + 1, date.getFullYear())
+			if (lunardate[0] == event[i][1] && lunardate[1] == event[i][2]) {
+				return event[i]
+			}
+		}
+	}
+	return null
+}
+
+const event = check_event(event_time)
+
+const setROOTs = (event) => {
+	const root = document.querySelector(':root')
+	if (event !== null) {
+		root.style.setProperty('--red', `${event[3]}`)
+		root.style.setProperty('--green', `${event[4]}`)
+		root.style.setProperty('--blue', `${event[5]}`)
+		
+		root.style.setProperty('--backgroundcolor', `rgb(${event[6]}, ${event[7]}, ${event[8]})`)
+		root.style.setProperty('--mainfontcolor', `rgb(${event[9]}, ${event[10]}, ${event[11]})`)
+		root.style.setProperty('--secondaryfontcolor', `rgb(${event[12]}, ${event[13]}, ${event[14]})`)
+		
+		root.style.setProperty('--textshadowcolor', `rgb(${event[15]}, ${event[16]}, ${event[17]})`)
+	} else {
+		const red = parseInt(Math.random() * 145) + 55;
+		const green = parseInt(Math.random() * 145) + 55;
+		const blue = parseInt(Math.random() * 145) + 55;
+		root.style.setProperty('--red', red);
+		root.style.setProperty('--green', green);
+		root.style.setProperty('--blue', blue);
+	}
+}
+
 const print_html = (() => {
-	const date = new Date();
-	document.getElementsByClassName("lichduong")[0].innerHTML = solarcalendar_html(date);
-	document.getElementsByClassName("licham")[0].innerHTML = lunarcalendar_html(date);
+	
+	const date = new Date()
+	document.getElementsByClassName("lichduong")[0].innerHTML = solarcalendar_html(date)
+	document.getElementsByClassName("licham")[0].innerHTML = lunarcalendar_html(date)
+	
+	setROOTs(event)
 })();
+
+
+
+const update = (() => {
+	let date = new Date()
+	setTimeout(() => {
+		print_html()
+		update()
+		console.log("update!  " + date)
+	}, (60 - date.getMinutes()) * 60000 )
+})()

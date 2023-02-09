@@ -37,12 +37,6 @@ const setFontSize = (lichwidth, thu, ngayduong, thangduong, namduong, ngayamso, 
 
 const setROOT = (lichwidth) => {
 	const root = document.querySelector(':root');
-	const red = parseInt(Math.random() * 145) + 55;
-	const green = parseInt(Math.random() * 145) + 55;
-	const blue = parseInt(Math.random() * 145) + 55;
-	root.style.setProperty('--red', red);
-	root.style.setProperty('--green', green);
-	root.style.setProperty('--blue', blue);
 	
 	const textshadow = `
 		${0.005 * lichwidth}px 0 var(--textshadowcolor), -${0.005 * lichwidth}px 0 var(--textshadowcolor),
@@ -58,7 +52,7 @@ const setTextShadow = (lichwidth, ngayduong) => {
 		${0.005 * lichwidth}px 0 var(--textshadowcolor), -${0.005 * lichwidth}px 0 var(--textshadowcolor),
 		0 ${0.005 * lichwidth}px var(--textshadowcolor), 0 -${0.005 * lichwidth}px var(--textshadowcolor), 
 		${0.0025 * lichwidth}px ${0.0025 * lichwidth}px var(--textshadowcolor), -${0.0025 * lichwidth}px -${0.0025 * lichwidth}px var(--textshadowcolor), 
-		${0.0025 * lichwidth}px -${0.0025 * lichwidth}px var(--textshadowcolor), -${0.0025 * lichwidth}px ${0.0025 * lichwidth}px var(--textshadowcolor), 0 0 ${0.125 * lichwidth}px var(--maincolor), 0 0 ${0.15 * lichwidth}px var(--maincolor), 0 0 ${0.1875 * lichwidth}px var(--maincolor), 0 0 ${0.3 * lichwidth}px var(--maincolor)
+		${0.0025 * lichwidth}px -${0.0025 * lichwidth}px var(--textshadowcolor), -${0.0025 * lichwidth}px ${0.0025 * lichwidth}px var(--textshadowcolor), 0 0 ${0.125 * lichwidth}px var(--secondaryfontcolor), 0 0 ${0.15 * lichwidth}px var(--secondaryfontcolor), 0 0 ${0.1875 * lichwidth}px var(--secondaryfontcolor), 0 0 ${0.3 * lichwidth}px var(--secondaryfontcolor)
 		`
 }
 
